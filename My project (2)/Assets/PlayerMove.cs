@@ -44,9 +44,21 @@ public class PlayerMove : MonoBehaviour
         direction.y -= gravity * Time.deltaTime;
         controller.Move(direction * Time.deltaTime);
 
-       // if (Input.GetMousButtonDown(0))
-        //{
-            //anim.SetTrigger("atac");
-        //}
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetBool("atac",true);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            anim.SetBool("atac",false);
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            anim.SetBool("walk",true);
+        }
+        else
+        {
+            anim.SetBool("walk",false);
+        }
     }
 }
